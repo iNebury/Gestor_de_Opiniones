@@ -8,6 +8,10 @@ import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/aut.routes.js"
 import userRoutes from "../src/usuario/usuario.routes.js"
 import categoria from "../src/categoria/categoria.routes.js"
+import comentarioRoutes from "../src/comentario/comentario.routes.js"
+import publicacionRoutes from "../src/publicaciones/publicacion.routes.js"
+import { swaggerDocs, swaggerUi } from "./swagger.js";
+
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -21,6 +25,9 @@ const routes = (app) =>{
     app.use("/gestorDeComentarios/v1/auth", authRoutes)
     app.use("/gestorDeComentarios/v1/user", userRoutes)
     app.use("/gestorDeComentarios/v1/categoria", categoria)
+    app.use("/gestorDeComentarios/v1/comentario", comentarioRoutes)
+    app.use("/gestorDeComentarios/v1/publicacion", publicacionRoutes)
+    app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 }
 
 const conectarDB = async () =>{
