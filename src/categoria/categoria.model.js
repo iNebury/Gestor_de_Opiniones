@@ -3,12 +3,12 @@ import { Schema, model } from "mongoose";
 const categoriaSchema = new Schema({
     titulo:{
         type: String,
-        required: [true, "Name is required"],
-        maxLength: [25, "Name cannot exceed 25 characters"]
+        required: [true, "Titulo is required"],
+        maxLength: [25, "Titulo cannot exceed 25 characters"]
     },
     descripcion:{
         type: String,
-        required: [true, "Surname is required"],
+        required: [true, "descripcion is required"],
     },
     status:{
         type: Boolean,
