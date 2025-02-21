@@ -7,6 +7,7 @@ import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/aut.routes.js"
 import userRoutes from "../src/usuario/usuario.routes.js"
+import categoria from "../src/categoria/categoria.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -19,6 +20,7 @@ const middlewares = (app) => {
 const routes = (app) =>{
     app.use("/gestorDeComentarios/v1/auth", authRoutes)
     app.use("/gestorDeComentarios/v1/user", userRoutes)
+    app.use("/gestorDeComentarios/v1/categoria", categoria)
 }
 
 const conectarDB = async () =>{
