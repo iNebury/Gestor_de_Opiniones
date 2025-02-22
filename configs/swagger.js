@@ -10,7 +10,7 @@ const options ={
             description: "API para un sistema de gestión opiniones",
             contact:{
                 name: "Urias Rivas",
-                email: "braulioecheverria@kinal.org.gt"
+                email: "durias-2020292@kinal.edu.gt"
             }
         },
         servers:[
@@ -24,7 +24,7 @@ const options ={
         "./src/usuario/usuario.routes.js",
         "./src/categoria/categoria.routes.js",
         "./src/comentario/comentario.routes.js",
-        "./src/publicaciones/publicaciones.routes.js"
+        "./src/publicaciones/publicacion.routes.js"
     ]
 }
 

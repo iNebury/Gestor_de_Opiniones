@@ -10,6 +10,7 @@ import userRoutes from "../src/usuario/usuario.routes.js"
 import categoria from "../src/categoria/categoria.routes.js"
 import comentarioRoutes from "../src/comentario/comentario.routes.js"
 import publicacionRoutes from "../src/publicaciones/publicacion.routes.js"
+import createAdmin from "../src/usuario/crearAdmin.js"
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 
@@ -33,6 +34,7 @@ const routes = (app) =>{
 const conectarDB = async () =>{
     try{
         await dbConnection()
+        await createAdmin()
     }catch(err){
         console.log(`Database connection failed: ${err}`)
         process.exit(1)
